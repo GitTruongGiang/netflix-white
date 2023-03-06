@@ -3,7 +3,7 @@ import ReactPlayer from "react-player";
 import video from "../image/video.mp4";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
-import InfoIcon from "@mui/icons-material/Info";
+import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 
@@ -39,16 +39,16 @@ function IntrolVideo() {
               onClick={() => setPlaying(!isPlaying)}
             >
               {isPlaying ? (
-                <PauseIcon id="PauseIcon" />
+                <PauseIcon id="playicon" />
               ) : (
-                <PlayArrowIcon id="PlayArrowIcon" />
+                <PlayArrowIcon id="playicon" />
               )}
               Play
             </button>
             <div className="background-info">
               <div className="background"></div>
               <button className="more-info">
-                <InfoIcon className="InfoIcon" /> More Info
+                <ErrorOutlineIcon className="InfoIcon" /> More Info
               </button>
             </div>
           </div>
@@ -69,6 +69,7 @@ function IntrolVideo() {
             <span>16+</span>
           </div>
         </div>
+        <div className="background-introl-cover-bottom"></div>
       </div>
     </div>
   );

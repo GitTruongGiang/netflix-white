@@ -59,7 +59,7 @@ function MainHeader() {
               <NotificationsIcon className="icon_notifications" />
             </button>
             <button className="title_singin" onClick={() => navigate("/login")}>
-              Sing In
+              Sign In
             </button>
           </div>
         </div>
