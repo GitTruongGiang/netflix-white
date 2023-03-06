@@ -379,6 +379,9 @@ body {
   background-color: rgb(0, 0, 0);
   padding: 40px 0px 40px 40px;
   color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 .movie-wraper {
   position: relative;
@@ -386,6 +389,7 @@ body {
 .swiper {
   height: 100%;
   width: 100%;
+  scroll-behavior: smooth;
 }
 .swiper-slide {
   display: flex;

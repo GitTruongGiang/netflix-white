@@ -36,13 +36,13 @@ function TopRate() {
           navigation={true}
           slidesPerGroup={6}
           grabCursor={true}
-          speed={1000}
+          speed={3000}
           loop={isAlly}
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: true,
-            reverseDirection: false,
-          }}
+          // autoplay={{
+          //   delay: 2000,
+          //   disableOnInteraction: true,
+          //   reverseDirection: false,
+          // }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={(e) => {
             if (e.a11y.clicked !== false) setIsAlly(true);
@@ -50,6 +50,7 @@ function TopRate() {
           onAutoplay={() => {
             setIsAlly(true);
           }}
+          spe
           className="list-movies"
         >
           {dataTopRate.length &&

@@ -36,7 +36,7 @@ function Comedy() {
           navigation={true}
           slidesPerGroup={6}
           grabCursor={true}
-          speed={1000}
+          speed={3000}
           loop={isAlly}
           autoplay={{
             delay: 2000,
