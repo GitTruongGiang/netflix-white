@@ -6,6 +6,12 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import CopyrightIcon from "@mui/icons-material/Copyright";
 
 function MainFooter() {
+  const listname = [
+    { name: ["Audio Desciption", "Investor Relations", "Legal Notices"] },
+    { name: ["Help Center", "Jobs", "Cookie Preferences"] },
+    { name: ["Gift Cards", "Terms of Use", "Corporate Infomation"] },
+    { name: ["Media Center", "Privacy", "Contact Us"] },
+  ];
   return (
     <div className="container_footer">
       <div className="footer_netflix">
@@ -25,34 +31,17 @@ function MainFooter() {
             </button>
           </div>
           <div className="footer_wraper">
-            <ul>
-              <li>
-                <a href="#">Audio Desciption</a>
-                <a href="#">Investor Relations</a>
-                <a href="#">Legal Notices</a>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <a href="#">Help Center</a>
-                <a href="#">Jobs</a>
-                <a href="#">Cookie Preferences</a>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <a href="#">Gift Cards</a>
-                <a href="#">Terms of Use</a>
-                <a href="#">Corporate Infomation</a>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <a href="#">Media Center</a>
-                <a href="#">Privacy</a>
-                <a href="#">Contact Us</a>
-              </li>
-            </ul>
+            {listname.map((e) => {
+              return (
+                <ul className="linkname">
+                  <li>
+                    {e.name.map((item) => {
+                      return <a href="#">{item}</a>;
+                    })}
+                  </li>
+                </ul>
+              );
+            })}
           </div>
         </div>
 

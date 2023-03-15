@@ -3,8 +3,13 @@ import logoNetflit from "../image/5898144_netflix.png";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 function MainHeader() {
+  const [isDisplay, setIsDisplay] = useState("none");
   const navigate = useNavigate();
   const [scroll, setScroll] = useState(0);
   const handleScrolly = () => {
@@ -38,6 +43,20 @@ function MainHeader() {
                   <a href="#">Language Reactor Calalogue</a>
                 </li>
               </ul>
+            </div>
+            <div className="browse-list">
+              <button className="btn-browse">
+                Browse
+                <ArrowDropDownIcon />
+              </button>
+            </div>
+            <div className="browse-1">
+              <button className="btn-list">Home</button>
+              <button className="btn-list">TV Shows</button>
+              <button className="btn-list">Movies</button>
+              <button className="btn-list">New & Popular </button>
+              <button className="btn-list">My List</button>
+              <button className="btn-list">Brose by Language</button>
             </div>
           </div>
           <div className="wrapr_header2">

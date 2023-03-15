@@ -115,6 +115,50 @@ body {
   border: none;
   cursor: pointer;
 }
+.browse-list {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .Link_header {
+    display: none;
+  }
+  #basic-button {
+    display: flex;
+  }
+  .browse-list {
+    position: relative;
+    display: flex;
+  }
+  .btn-browse {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .browse-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 1;
+  }
+  .btn-list {
+    background-color: rgb(0, 0, 0, 0.5);
+    height: 50px;
+    width: 350px;
+    border: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    top: 25px;
+    left: 20px;
+  }
+}
 /* footer */
 .container_footer {
   width: 100%;
@@ -154,20 +198,13 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.footer_wraper ul {
-  margin: 0;
-  padding: 0;
+.linkname li a {
+  color: white;
+  text-decoration: none;
 }
-.footer_wraper ul li {
-  list-style: none;
+.linkname li {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-}
-.footer_wraper ul li a {
-  text-decoration: none;
-  color: grey;
-  font-size: 14px;
 }
 .service_code {
   padding: 5px;
@@ -432,37 +469,49 @@ body {
   position: absolute;
   width: 100%;
 }
+.swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
+  cursor: pointer;
+}
+
 .swiper-button-prev {
   background-color: rgba(0, 0, 0, 0.5);
-  height: 60px;
+  height: 100%;
   width: 30px;
-  border-radius: 5px;
   cursor: pointer;
   transition: all 0.2s ease-in;
   color: white;
-  opacity: 0.8;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  left: 0;
 }
 .swiper-button-prev::after {
   font-size: 20px;
-  opacity: 1;
 }
 .swiper-button-prev:hover {
   background-color: rgba(0, 0, 0, 1);
+  opacity: 1;
 }
 .swiper-button-next {
   background-color: rgba(0, 0, 0, 0.5);
-  height: 60px;
+  height: 100%;
   width: 30px;
-  border-radius: 5px;
   cursor: pointer;
   transition: all 0.2s ease-in;
   color: white;
+  opacity: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  right: 0;
 }
 .swiper-button-next::after {
   font-size: 20px;
 }
 .swiper-button-next:hover {
   background-color: rgba(0, 0, 0, 1);
+  opacity: 1;
 }
 /* login */
 .container-login {

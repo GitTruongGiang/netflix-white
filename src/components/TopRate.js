@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import apiService from "../app/apiService";
 import { IMAGE_URL } from "../app/confing";
-import { requestQuery } from "../app/requestQuery";
 import { Navigation, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -9,14 +8,15 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-function TopRate() {
+function TopRate({ name, topRate }) {
+  console.log(topRate);
   const [dataTopRate, setDateTopRate] = useState([]);
   const [isAlly, setIsAlly] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await apiService.get(requestQuery.topRate);
+        const response = await apiService.get(topRate);
         setDateTopRate(response.data.results);
       } catch (error) {
         console.log(error);
@@ -27,7 +27,7 @@ function TopRate() {
 
   return (
     <div className="movie-wraper">
-      <h1>TopRate</h1>
+      <h1>{name}</h1>
       {
         <Swiper
           modules={[Navigation, A11y, Autoplay]}
@@ -36,27 +36,21 @@ function TopRate() {
           navigation={true}
           slidesPerGroup={6}
           grabCursor={true}
-          speed={3000}
+          speed={1500}
           loop={isAlly}
-          // autoplay={{
-          //   delay: 2000,
-          //   disableOnInteraction: true,
-          //   reverseDirection: false,
-          // }}
-          onSwiper={(swiper) => console.log(swiper)}
+          onSwiper={(swiper) => console.log(swiper.a11y)}
           onSlideChange={(e) => {
             if (e.a11y.clicked !== false) setIsAlly(true);
           }}
           onAutoplay={() => {
             setIsAlly(true);
           }}
-          spe
           className="list-movies"
         >
           {dataTopRate.length &&
             dataTopRate.map((movie) => {
               return (
-                <SwiperSlide className="movie" key={movie.id}>
+                <SwiperSlide key={movie.id}>
                   <img
                     src={`${IMAGE_URL}/${movie.backdrop_path}`}
                     alt=""
