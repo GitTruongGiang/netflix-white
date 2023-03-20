@@ -7,11 +7,18 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { useNavigate } from "react-router-dom";
 
 function TopRate({ name, topRate }) {
-  console.log(topRate);
   const [dataTopRate, setDateTopRate] = useState([]);
   const [isAlly, setIsAlly] = useState(false);
+  const [isHover, setIsHover] = useState(false);
+  const navigate = useNavigate();
+
+  const handleMovieClick = (item) => {
+    console.log(item);
+    navigate(`/movie/${item.id}`);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,11 +34,9 @@ function TopRate({ name, topRate }) {
 
   return (
     <div className="movie-wraper">
-      <h1>{name}</h1>
       {
         <Swiper
           modules={[Navigation, A11y, Autoplay]}
-          spaceBetween={20}
           slidesPerView={6}
           navigation={true}
           slidesPerGroup={6}
@@ -45,17 +50,36 @@ function TopRate({ name, topRate }) {
           onAutoplay={() => {
             setIsAlly(true);
           }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+            1200: {
+              slidesPerView: 6,
+              spaceBetween: 20,
+            },
+          }}
           className="list-movies"
         >
+          <h1>{name}</h1>
           {dataTopRate.length &&
             dataTopRate.map((movie) => {
               return (
-                <SwiperSlide key={movie.id}>
+                <SwiperSlide
+                  key={movie.id}
+                  onClick={() => handleMovieClick(movie)}
+                >
                   <img
                     src={`${IMAGE_URL}/${movie.backdrop_path}`}
                     alt=""
                     className="poster-movie"
                   />
+
                   <div className="bg-movie"></div>
                 </SwiperSlide>
               );

@@ -50,14 +50,6 @@ function MainHeader() {
                 <ArrowDropDownIcon />
               </button>
             </div>
-            <div className="browse-1">
-              <button className="btn-list">Home</button>
-              <button className="btn-list">TV Shows</button>
-              <button className="btn-list">Movies</button>
-              <button className="btn-list">New & Popular </button>
-              <button className="btn-list">My List</button>
-              <button className="btn-list">Brose by Language</button>
-            </div>
           </div>
           <div className="wrapr_header2">
             <div className="input_search">

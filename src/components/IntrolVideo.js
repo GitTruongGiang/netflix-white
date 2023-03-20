@@ -56,11 +56,11 @@ function IntrolVideo() {
         <div className="vollume18">
           {isMuted ? (
             <button className="volume" onClick={() => setIsMuted(!isMuted)}>
-              <VolumeOffIcon id="volume-icon" />
+              <VolumeOffIcon className="volume-icon" />
             </button>
           ) : (
             <button className="volume" onClick={() => setIsMuted(!isMuted)}>
-              <VolumeUpIcon id="volume-icon" />
+              <VolumeUpIcon className="volume-icon" />
             </button>
           )}
           <div className="vollume-title">
