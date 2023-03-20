@@ -24,80 +24,76 @@ function DeitalPage() {
 
   return (
     <div className="deita_container">
-      <div key={dataDeital.id}>
-        <div
-          style={{
-            backgroundImage: `url(${
-              IMAGE_URL + dataDeital.backdrop_path || dataDeital.poster_path
-            })`,
-            width: "100%",
-            height: "400px",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            objectFit: "cover",
-          }}
-        >
-          <div className="fadetop"></div>
-          <Container maxWidth="lg">
-            <div className="deita_main">
-              <div className="deita_poster">
-                <img src={IMAGE_URL + dataDeital.poster_path} alt="" />
+      <div
+        style={{
+          backgroundImage: `url(${
+            IMAGE_URL + dataDeital.backdrop_path || dataDeital.poster_path
+          })`,
+          width: "100%",
+          height: "400px",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          objectFit: "cover",
+        }}
+      >
+        <div className="fadetop"></div>
+        <Container maxWidth="lg">
+          <div className="deita_main">
+            <div className="deita_poster">
+              <img src={IMAGE_URL + dataDeital.poster_path} alt="" />
+            </div>
+            <div className="deita_heding">
+              <div>
+                <h4>{dataDeital.release_date || dataDeital.first_air_date}</h4>
+                <h1> {dataDeital.title || dataDeital.name}</h1>
+                <p>{dataDeital.overview}</p>
               </div>
-              <div className="deita_heding">
-                <div>
-                  <h4>
-                    {dataDeital.release_date || dataDeital.first_air_date}
-                  </h4>
-                  <h1> {dataDeital.title || dataDeital.name}</h1>
-                  <p>{dataDeital.overview}</p>
+              <div className="main_icon">
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginRight: "30px",
+                  }}
+                >
+                  <button className="icon_playarrowicon">
+                    <PlayArrowIcon id="icon_play" />
+                  </button>
+                  <span>Watch The Trailer</span>
                 </div>
-                <div className="main_icon">
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      marginRight: "30px",
-                    }}
-                  >
-                    <button className="icon_playarrowicon">
-                      <PlayArrowIcon id="icon_play" />
-                    </button>
-                    <span>Watch The Trailer</span>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <button className="icon_playarrowicon">
-                      <ShareIcon id="icon_share" />
-                    </button>
-                    <span>Share</span>
-                  </div>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <button className="icon_playarrowicon">
+                    <ShareIcon id="icon_share" />
+                  </button>
+                  <span>Share</span>
                 </div>
-                <div className="deita_rate">
-                  <div className="vote_average">
-                    <p>
-                      <span className="voted">{dataDeital.vote_average}</span>
-                      /10 <span className="imdb">IMDb</span>
-                    </p>
-                  </div>
-                  <div className="add_heart">
-                    <button className="add">
-                      <AddIcon id="icon_add" />
-                    </button>
-                    <button className="heart">
-                      <FavoriteIcon id="icon_heart" />
-                    </button>
-                  </div>
+              </div>
+              <div className="deita_rate">
+                <div className="vote_average">
+                  <p>
+                    <span className="voted">{dataDeital.vote_average}</span>
+                    /10 <span className="imdb">IMDb</span>
+                  </p>
+                </div>
+                <div className="add_heart">
+                  <button className="add">
+                    <AddIcon id="icon_add" />
+                  </button>
+                  <button className="heart">
+                    <FavoriteIcon id="icon_heart" />
+                  </button>
                 </div>
               </div>
             </div>
-          </Container>
-        </div>
+          </div>
+        </Container>
       </div>
     </div>
   );

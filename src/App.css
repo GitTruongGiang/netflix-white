@@ -628,56 +628,6 @@ body {
 #icon_heart:hover {
   color: red;
 }
-.select {
-  margin-top: 50px;
-}
-.list_tabs {
-  width: 100%;
-}
-.tabs_deita {
-  border-bottom: 1rem;
-}
-#tabs {
-  color: rgb(255, 255, 255);
-}
-.title_video {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-}
-.title_video a {
-  text-decoration: none;
-  color: rgb(0, 156, 199);
-}
-.title_video a:hover {
-  color: greenyellow;
-}
-.bg_overview {
-  background-color: #fff;
-  height: 1px;
-  width: 100%;
-  margin-top: 20px;
-}
-.title_cast {
-  margin-top: 20px;
-}
-.director {
-  margin-top: 20px;
-  display: flex;
-}
-.img_director {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-}
-.img_director img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  background-size: cover;
-  border-radius: 50%;
-  margin-right: 20px;
-}
 
 @media (max-width: 768px) {
   .Link_header {
